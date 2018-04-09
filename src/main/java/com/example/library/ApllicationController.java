@@ -55,6 +55,9 @@ public class ApllicationController {
             } catch (InputMismatchException a) {
                 mainController = 0;
                 System.out.println("Wprowadzono niewłaściwy typ opcji.");
+            } catch (NullPointerException b){
+                System.out.println("Błąd łączności");
+                mainController = 4;
             }
 
         } while (mainController != 4);

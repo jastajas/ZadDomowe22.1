@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 
 public class LibraryDelete extends QueriesDB {
 
+
     @Override
     protected void readUserInput() {
         try {
@@ -18,6 +19,7 @@ public class LibraryDelete extends QueriesDB {
     protected void queryIntoDatabase() {
         if (book.getId() > 0) {
             bookDao.delete(book.getId());
+            bookDao.closeConnection();
         } else {
             throw new UncorrectIDException();
         }
