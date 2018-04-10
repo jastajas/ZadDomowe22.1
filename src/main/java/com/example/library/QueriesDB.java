@@ -9,9 +9,9 @@ public abstract class QueriesDB {
     BookDao bookDao;
 
     public QueriesDB() {
-        this.book = new Book();
+        book = new Book();
         scanner = new Scanner(System.in);
-        this.bookDao = new BookDao();
+        bookDao = new BookDao();
     }
 
     protected abstract void readUserInput();

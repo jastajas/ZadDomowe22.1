@@ -4,7 +4,6 @@ import java.util.InputMismatchException;
 
 public class LibrarySave extends QueriesDB {
 
-
     @Override
     protected void readUserInput() {
         try {
@@ -31,7 +30,6 @@ public class LibrarySave extends QueriesDB {
                 !book.getAuthor().equals("") && book.getAuthor() != null &&
                 String.valueOf(book.getIsbn()).length() >= 10 && String.valueOf(book.getYear()).length() == 4) {
             bookDao.save(book);
-            bookDao.closeConnection();
         } else {
             throw new UncorrectBookException();
         }

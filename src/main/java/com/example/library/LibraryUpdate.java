@@ -38,7 +38,6 @@ public class LibraryUpdate extends QueriesDB {
             throw new UncorrectBookException();
         } else {
             bookDao.update(book);
-            bookDao.closeConnection();
         }
     }
 

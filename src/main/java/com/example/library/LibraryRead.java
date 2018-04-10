@@ -1,11 +1,8 @@
 package com.example.library;
 
-import org.springframework.stereotype.Component;
-
 import java.util.InputMismatchException;
 
 public class LibraryRead extends QueriesDB {
-
 
     @Override
     protected void readUserInput() {
@@ -21,7 +18,6 @@ public class LibraryRead extends QueriesDB {
     protected void queryIntoDatabase() {
         if (book.getId() > 0) {
             book = bookDao.read(book.getId());
-            bookDao.closeConnection();
         } else {
             throw new UncorrectIDException();
         }
@@ -37,6 +33,7 @@ public class LibraryRead extends QueriesDB {
 
             } else {
                 System.out.println("Wybrana pozycja nie jest zarejestrowana w bazie.");
+                book = new Book();
             }
         } catch (UncorrectIDException f) {
             System.out.println("ID wasn't read properly. Book not found.");
